@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "Best After",
+    "slug": "best-after",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,13 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tdang17org.bestafter"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.tdang17org.bestafter"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +38,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d4a1c76d-4fe7-4918-9e9a-2f091296db47"
+      }
+    },
+    "owner": "tdang17-org",
+    "updates": {
+      "url": "https://u.expo.dev/d4a1c76d-4fe7-4918-9e9a-2f091296db47"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
