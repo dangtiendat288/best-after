@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native';
-
+import { Dimensions, StyleSheet } from 'react-native';
+const { width } = Dimensions.get('window');
+const cardWidth = width * 0.7;
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -49,9 +50,11 @@ export const styles = StyleSheet.create({
       padding: 20,
     },
     heroImage: {
-      width: 246,
+      width: '100%',
       height: 180,
+      resizeMode: 'contain',
       marginBottom: 15,
+
     },
     heroTitle: {
       fontSize: 59,
@@ -66,11 +69,11 @@ export const styles = StyleSheet.create({
       fontFamily: "Poppins",
       fontWeight: "500",
       color: "#000000",
-      marginBottom: 38,
+      marginBottom: 10,
     },
     actionButtons: {
       alignItems: "center",
-      padding: 20,
+      padding: 10,
     },
     shopButton: {
       width: 269,
@@ -87,7 +90,7 @@ export const styles = StyleSheet.create({
     },
     donateSection: {
       padding: 20,
-      marginTop: 50,
+      marginTop: 10,
     },
     sectionTitle: {
       fontSize: 40,
@@ -115,8 +118,8 @@ export const styles = StyleSheet.create({
       fontSize: 40,
       fontFamily: "Montserrat",
       fontWeight: "800",
-      color: "#010101",
-      marginTop: 20,
+      color: "#fff",
+      marginTop: 110,
     },
     browseSection: {
       padding: 20,
@@ -142,24 +145,20 @@ export const styles = StyleSheet.create({
       flexWrap: "wrap",
       gap: 20,
     },
-    packageCard: {
-      flex: 1,
-      minWidth: 150,
-    },
     packageImage: {
       width: "100%",
       aspectRatio: 0.92,
     },
     packageTitle: {
       fontSize: 24,
-      fontFamily: "Poppins",
+      // fontFamily: "Poppins",
       fontWeight: "600",
       color: "#000000",
       marginTop: 8,
     },
     packagePrice: {
       fontSize: 24,
-      fontFamily: "Poppins",
+      // fontFamily: "Poppins",
       fontWeight: "400",
       color: "#000000",
     },
@@ -273,6 +272,43 @@ export const styles = StyleSheet.create({
       fontFamily: "Poppins",
       fontWeight: "500",
       color: "#010101",
+    },
+    heading: {
+      fontSize: 22,
+      fontWeight: 'bold',
+      marginBottom: 15,
+      marginLeft: 15,
+    },
+    listContainer: {
+      paddingHorizontal: 10,
+    },
+    card: {
+      width: cardWidth,
+      backgroundColor: '#fff',
+      borderRadius: 12,
+      padding: 15,
+      marginHorizontal: 5,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 3,
+    },
+    image: {
+      width: '100%',
+      height: cardWidth * 0.6,
+      borderRadius: 8,
+      marginBottom: 10,
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: '600',
+      textTransform: 'capitalize',
+      marginBottom: 6,
+    },
+    price: {
+      fontSize: 18,
+      fontWeight: '700',      
     },
   });
   

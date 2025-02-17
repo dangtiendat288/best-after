@@ -1,15 +1,45 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import {
+  FlatList,
   Image,
   ScrollView,
   Text,
   TouchableOpacity,
   View
 } from "react-native";
-
 import { styles } from "./styles";
 
+interface Package {
+  image: string,
+  title: string,
+  price: string
+}
+
+const renderItem = ({ item } : {item: Package }) => (
+  <View style={styles.card}>
+    <Image source={{ uri: item.image }} style={styles.image} />
+    <Text style={styles.title}>{item.title}</Text>
+    <Text style={styles.price}>{item.price}</Text>
+  </View>
+);
+const data = [  
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/c33ba03542d0e7a91d8a238bbc96ecf0a318e4be412aad362b2410ec494c6266",
+    title: "special package 1",
+    price: "$3",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/8e921e211173dcb02f0d3ce602a825a33c73ce65659fb7e32120ceaf6150ce67",
+    title: "special package 2",
+    price: "$3",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/f1c14621b6b7c9c8e6c7404c9309df0995b90fe1cf9888ebb5d984c1957fdd7c",
+    title: "special package 3",
+    price: "$3",
+  },
+];
 export default function HomeScreen() {
   return (
     <>
@@ -39,7 +69,7 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.donateSection}>
-        <Text style={styles.sectionTitle}>Donate</Text>
+        <Text style={styles.sectionTitle}>Categories</Text>
         <View style={styles.donateCard}>
           <Image
             source={{
@@ -47,56 +77,36 @@ export default function HomeScreen() {
             }}
             style={styles.donateBackground}
           />
-          <Text style={styles.donateText}>Click here</Text>
+          <Ionicons name="arrow-forward" size={58} color="white" style={{...styles.icon,marginStart:150}} />
           <Text style={styles.donateTitle}>Favourites</Text>
         </View>
       </View>
 
-      <View style={styles.browseSection}>
-        <Text style={styles.browseText}>Click here</Text>
-        <Text style={styles.browseTitle}>Browse</Text>
-      </View>
-
       <View style={styles.specialPackages}>
         <Text style={styles.sectionTitle}>Special Packages</Text>
-        <View style={styles.packageGrid}>
-          <View style={styles.packageCard}>
-            <Image
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/c33ba03542d0e7a91d8a238bbc96ecf0a318e4be412aad362b2410ec494c6266",
-              }}
-              style={styles.packageImage}
-            />
-            <Text style={styles.packageTitle}>special package</Text>
-            <Text style={styles.packagePrice}>$3</Text>
-          </View>
-        </View>
+        
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => `package-${index}`}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.listContainer}
+          ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
+          />
       </View>
 
       <View style={styles.topPicks}>
         <Text style={styles.sectionTitle}>Top picks</Text>
-        <View style={styles.picksGrid}>
-          <View style={styles.pickCard}>
-            <Image
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/8e921e211173dcb02f0d3ce602a825a33c73ce65659fb7e32120ceaf6150ce67",
-              }}
-              style={styles.pickImage}
-            />
-            <Text style={styles.pickTitle}>Broccoli pesto pasta</Text>
-            <Text style={styles.pickSubtitle}>view recipe</Text>
-          </View>
-          <View style={styles.pickCard}>
-            <Image
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/f1c14621b6b7c9c8e6c7404c9309df0995b90fe1cf9888ebb5d984c1957fdd7c",
-              }}
-              style={styles.pickImage}
-            />
-            <Text style={styles.pickTitle}>pot chicken taco</Text>
-            <Text style={styles.pickSubtitle}>view recipe</Text>
-          </View>
-        </View>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => `package-${index}`}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.listContainer}
+          ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
+          />
       </View>
 
       <View style={styles.newsletter}>
@@ -107,58 +117,7 @@ export default function HomeScreen() {
         <TouchableOpacity style={styles.joinButton}>
           <Text style={styles.joinButtonText}>Join Mailing List</Text>
         </TouchableOpacity>
-      </View>
-
-      <View style={styles.footer}>
-        <View style={styles.footerColumns}>
-          <View style={styles.footerColumn}>
-            <Text style={styles.footerTitle}>My Account</Text>
-            <Text style={styles.footerLink}>Sign in</Text>
-            <Text style={styles.footerLink}>Register</Text>
-            <Text style={styles.footerLink}>Order status</Text>
-
-            <Text style={styles.footerTitle}>About</Text>
-            <Text style={styles.footerLink}>Our story</Text>
-            <Text style={styles.footerLink}>Media</Text>
-            <Text style={styles.footerLink}>Sustainability</Text>
-
-            <Text style={styles.footerTitle}>Follow Best After</Text>
-          </View>
-
-          <View style={styles.footerColumn}>
-            <Text style={styles.footerTitle}>Help</Text>
-            <Text style={styles.footerLink}>Shipping</Text>
-            <Text style={styles.footerLink}>Returns</Text>
-            <Text style={styles.footerLink}>Sizing</Text>
-
-            <Text style={styles.footerTitle}>Legal stuff</Text>
-            <Text style={styles.footerLink}>Terms of use</Text>
-            <Text style={styles.footerLink}>Terms of sale</Text>
-            <Text style={styles.footerLink}>Privacy policy</Text>
-          </View>
-        </View>
-
-        <View style={styles.socialIcons}>
-          <Image
-            source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/f90203a5-f358-4a75-b51a-f4669f887986",
-            }}
-            style={styles.socialIcon}
-          />
-          <Image
-            source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/81403685-edaf-4485-8b1f-77b692e45bb4",
-            }}
-            style={styles.socialIcon}
-          />
-        </View>
-
-        <View style={styles.copyright}>
-          <Text style={styles.copyrightText}>
-            Best After inc. All Rights Reserved
-          </Text>
-        </View>
-      </View>
+      </View>      
     </ScrollView>
     </>
   );
