@@ -11,19 +11,20 @@ import {
 import { styles } from "./styles";
 
 interface Package {
-  image: string,
-  title: string,
-  price: string
+  image: string;
+  title: string;
+  price: string;
 }
 
-const renderItem = ({ item } : {item: Package }) => (
+const renderItem = ({ item }: { item: Package }) => (
   <View style={styles.card}>
     <Image source={{ uri: item.image }} style={styles.image} />
     <Text style={styles.title}>{item.title}</Text>
     <Text style={styles.price}>{item.price}</Text>
   </View>
 );
-const data = [  
+
+const data = [
   {
     image: "https://cdn.builder.io/api/v1/image/assets/TEMP/c33ba03542d0e7a91d8a238bbc96ecf0a318e4be412aad362b2410ec494c6266",
     title: "special package 1",
@@ -40,86 +41,85 @@ const data = [
     price: "$3",
   },
 ];
+
 export default function HomeScreen() {
   return (
     <>
-    <View style={styles.header}>
-        <Text style={styles.headerTitle}>Best After</Text>          
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Best After</Text>
         <View style={styles.iconContainer}>
-        <Ionicons name="search" size={24} color="black" style={styles.icon} />        
-        <Ionicons name="cart" size={24} color="black" style={styles.icon} />
+          <Ionicons name="search" size={24} color="black" style={styles.icon} />
+          <Ionicons name="cart" size={24} color="black" style={styles.icon} />
         </View>
-      </View>    
-    <ScrollView style={styles.container}>    
-      <View style={styles.heroSection}>
-        <Image
-          source={{
-            uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/baedf52067b6105cb92258c100c0e049c895837906c9aed955bcefd31ad831e7",
-          }}
-          style={styles.heroImage}
-        />
-        <Text style={styles.heroTitle}>Great Savings</Text>
-        <Text style={styles.heroSubtitle}>Introducing better ways to dine</Text>
       </View>
-
-      <View style={styles.actionButtons}>
-        <TouchableOpacity style={styles.shopButton}>
-          <Text style={styles.shopButtonText}>SHOP</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.donateSection}>
-        <Text style={styles.sectionTitle}>Categories</Text>
-        <View style={styles.donateCard}>
+      <ScrollView style={styles.container}>
+        <View style={styles.heroSection}>
           <Image
             source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/493def27d0912d401c53e91d1b93aeb177ab7ba2cbceaa5f4ef693b1748e4f61",
+              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/baedf52067b6105cb92258c100c0e049c895837906c9aed955bcefd31ad831e7",
             }}
-            style={styles.donateBackground}
+            style={styles.heroImage}
           />
-          <Ionicons name="arrow-forward" size={58} color="white" style={{...styles.icon,marginStart:150}} />
-          <Text style={styles.donateTitle}>Favourites</Text>
+          <Text style={styles.heroTitle}>Great Savings</Text>
+          <Text style={styles.heroSubtitle}>Introducing better ways to dine</Text>
         </View>
-      </View>
 
-      <View style={styles.specialPackages}>
-        <Text style={styles.sectionTitle}>Special Packages</Text>
-        
-        <FlatList
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={(item, index) => `package-${index}`}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.listContainer}
-          ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
+        <View style={styles.actionButtons}>
+          <TouchableOpacity style={styles.shopButton}>
+            <Text style={styles.shopButtonText}>SHOP</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.donateSection}>
+          <Text style={styles.sectionTitle}>Categories</Text>
+          <View style={styles.donateCard}>
+            <Image
+              source={{
+                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/493def27d0912d401c53e91d1b93aeb177ab7ba2cbceaa5f4ef693b1748e4f61",
+              }}
+              style={styles.donateBackground}
+            />
+            <Ionicons name="arrow-forward" size={58} color="white" style={{ ...styles.icon, marginStart: 150 }} />
+            <Text style={styles.donateTitle}>Favourites</Text>
+          </View>
+        </View>
+
+        <View style={styles.specialPackages}>
+          <Text style={styles.sectionTitle}>Special Packages</Text>
+          <FlatList
+            data={data}
+            renderItem={renderItem}
+            keyExtractor={(item, index) => `package-${index}`}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.listContainer}
+            ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
           />
-      </View>
+        </View>
 
-      <View style={styles.topPicks}>
-        <Text style={styles.sectionTitle}>Top picks</Text>
-        <FlatList
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={(item, index) => `package-${index}`}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.listContainer}
-          ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
+        <View style={styles.topPicks}>
+          <Text style={styles.sectionTitle}>Top picks</Text>
+          <FlatList
+            data={data}
+            renderItem={renderItem}
+            keyExtractor={(item, index) => `package-${index}`}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.listContainer}
+            ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
           />
-      </View>
+        </View>
 
-      <View style={styles.newsletter}>
-        <Text style={styles.newsletterTitle}>Never miss a deal</Text>
-        <Text style={styles.newsletterSubtitle}>
-          Receive updates about new promotions
-        </Text>
-        <TouchableOpacity style={styles.joinButton}>
-          <Text style={styles.joinButtonText}>Join Mailing List</Text>
-        </TouchableOpacity>
-      </View>      
-    </ScrollView>
+        <View style={styles.newsletter}>
+          <Text style={styles.newsletterTitle}>Never miss a deal</Text>
+          <Text style={styles.newsletterSubtitle}>
+            Receive updates about new promotions
+          </Text>
+          <TouchableOpacity style={styles.joinButton}>
+            <Text style={styles.joinButtonText}>Join Mailing List</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </>
   );
 }
-

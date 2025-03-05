@@ -48,13 +48,16 @@ export const styles = StyleSheet.create({
     heroSection: {
       alignItems: "center",
       padding: 20,
+      backgroundColor: "#f8f8f8",
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
     },
     heroImage: {
       width: '100%',
       height: 180,
       resizeMode: 'contain',
       marginBottom: 15,
-
+      borderRadius: 10,
     },
     heroTitle: {
       fontSize: 59,
@@ -81,6 +84,13 @@ export const styles = StyleSheet.create({
       alignItems: "center",
       borderWidth: 1,
       borderColor: "#000000",
+      borderRadius: 10,
+      backgroundColor: "#f8f8f8",
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 3,
     },
     shopButtonText: {
       fontSize: 24,
@@ -104,9 +114,18 @@ export const styles = StyleSheet.create({
       aspectRatio: 0.913,
       padding: 20,
       position: "relative",
+      borderRadius: 10,
+      overflow: "hidden",
+      backgroundColor: "#f8f8f8",
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 3,
     },
     donateBackground: {
       ...StyleSheet.absoluteFillObject,
+      borderRadius: 10,
     },
     donateText: {
       fontSize: 24,
@@ -148,17 +167,16 @@ export const styles = StyleSheet.create({
     packageImage: {
       width: "100%",
       aspectRatio: 0.92,
+      borderRadius: 10,
     },
     packageTitle: {
       fontSize: 24,
-      // fontFamily: "Poppins",
       fontWeight: "600",
       color: "#000000",
       marginTop: 8,
     },
     packagePrice: {
       fontSize: 24,
-      // fontFamily: "Poppins",
       fontWeight: "400",
       color: "#000000",
     },
@@ -169,28 +187,7 @@ export const styles = StyleSheet.create({
       flexDirection: "row",
       flexWrap: "wrap",
       gap: 13,
-    },
-    pickCard: {
-      flex: 1,
-      minWidth: 150,
-    },
-    pickImage: {
-      width: "100%",
-      aspectRatio: 0.92,
-    },
-    pickTitle: {
-      fontSize: 24,
-      fontFamily: "Poppins",
-      fontWeight: "600",
-      color: "#000000",
-      marginTop: 15,
-    },
-    pickSubtitle: {
-      fontSize: 24,
-      fontFamily: "Poppins",
-      fontWeight: "600",
-      color: "#000000",
-    },
+    },        
     newsletter: {
       padding: 20,
       alignItems: "center",
@@ -219,6 +216,13 @@ export const styles = StyleSheet.create({
       borderColor: "#000000",
       padding: 26,
       alignItems: "center",
+      borderRadius: 10,
+      backgroundColor: "#f8f8f8",
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 3,
     },
     joinButtonText: {
       fontSize: 24,
@@ -311,4 +315,3 @@ export const styles = StyleSheet.create({
       fontWeight: '700',      
     },
   });
-  

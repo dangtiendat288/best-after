@@ -1,9 +1,10 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from 'react-native';
+const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fff",
   },
   header: {
     flexDirection: "row",
@@ -16,72 +17,147 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "#ddd",
   },
-  backLink: {
-    marginRight: 30,
-  },
-  backIcon: {
-    width: 57,
-    height: 45,
-    resizeMode: "contain",
-  },
-  headerContent: {
-    flex: 1,
+  iconContainer: {
+    flexDirection: "row",
+    gap: 15,
   },
   headerTitle: {
     fontFamily: "Prociono",
     fontSize: 28,
     color: "#010101",
   },
-  iconContainer: {
-    flexDirection: "row",
-    gap: 15,
-  },
   icon: {
     padding: 5,
   },
-  headerImage: {
-    width: 98,
-    height: 64,
-    resizeMode: "contain",
+  heroSection: {
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: "#f8f8f8",
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   },
-  mainImage: {
-    width: "100%",
-    height: 244,
-    resizeMode: "contain",
-    alignSelf: "center",
-    marginTop: 50,
+  heroImage: {
+    width: '100%',
+    height: 180,
+    resizeMode: 'contain',
+    marginBottom: 15,
+    borderRadius: 10,
   },
-  content: {
-    padding: 24,
-  },
-  title: {
+  heroTitle: {
     fontSize: 59,
     fontFamily: "Montserrat",
     fontWeight: "800",
     color: "#000000",
     letterSpacing: -2.97,
+    marginBottom: 16,
+  },
+  heroSubtitle: {
+    fontSize: 24,
+    fontFamily: "Poppins",
+    fontWeight: "500",
+    color: "#000000",
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  donateImageContainer: {
+    alignItems: "center",
+    padding: 20,
+  },
+  donateImage: {
+    width: '100%',
+    height: 400,
+    // resizeMode: 'contain',
+    borderRadius: 10,
+  },
+  separatorContainer: {
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  separatorImage: {
+    width: '100%',
+    height: 50,
+    resizeMode: 'contain',
+  },
+  donationCardsSection: {
+    padding: 20,
+  },
+  sectionTitle: {
+    fontSize: 40,
+    fontFamily: "Montserrat",
+    fontWeight: "800",
+    color: "#010101",
+    marginBottom: 20,
+  },
+  newsletter: {
+    padding: 20,
+    alignItems: "center",
     marginTop: 30,
+  },
+  newsletterTitle: {
+    fontSize: 40,
+    fontFamily: "Montserrat",
+    fontWeight: "800",
+    color: "#000000",
+    textAlign: "center",
+    marginBottom: 33,
+  },
+  newsletterSubtitle: {
+    fontSize: 24,
+    fontFamily: "Poppins",
+    fontWeight: "500",
+    color: "#000000",
+    textAlign: "center",
+    marginBottom: 32,
+  },
+  content: {
+    padding: 20,
+  },
+  title: {
+    fontSize: 40,
+    fontFamily: "Montserrat",
+    fontWeight: "800",
+    color: "#000000",
+    marginBottom: 16,
   },
   subtitle: {
     fontSize: 24,
     fontFamily: "Poppins",
     fontWeight: "500",
-    lineHeight: 28,
     color: "#000000",
-    marginTop: 24,
+    marginBottom: 20,
   },
-  donateImage: {
-    width: "100%",
-    aspectRatio: 0.95,
-    resizeMode: "contain",
-    marginTop: 36,
+  mainImage: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
   },
-  separatorImage: {
+  donateCard: {
     width: "100%",
-    aspectRatio: 0.9,
-    resizeMode: "contain",
-    marginTop: 19,
-    maxWidth: 345,
-    alignSelf: "center",
+    aspectRatio: 0.913,
+    padding: 20,
+    position: "relative",
+    borderRadius: 10,
+    overflow: "hidden",
+    backgroundColor: "#f8f8f8",
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  donateBackground: {
+    ...StyleSheet.absoluteFillObject,
+    borderRadius: 10,
+  },
+  donateSection: {
+    padding: 20,
+    marginTop: 10,
+  },
+  donateTitle: {
+    fontSize: 40,
+    fontFamily: "Montserrat",
+    fontWeight: "800",
+    color: "#fff",
+    marginTop: 110,
   },
 });
