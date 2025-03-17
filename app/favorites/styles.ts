@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     },
     heroSection: {
       alignItems: "center",
-      padding: 20,
+      paddingHorizontal: 20,      
     },
     heroImage: {
       width: 246,
@@ -66,7 +66,7 @@ export const styles = StyleSheet.create({
       fontFamily: "Poppins",
       fontWeight: "500",
       color: "#000000",
-      marginBottom: 38,
+      marginBottom: 10,
     },
     actionButtons: {
       alignItems: "center",
@@ -193,9 +193,9 @@ export const styles = StyleSheet.create({
       color: "#000000",
     },
     newsletter: {
-      padding: 20,
-      alignItems: "center",
-      marginTop: 30,
+      paddingHorizontal: 20,
+      alignItems: "center",     
+      paddingBottom: 20 
     },
     newsletterTitle: {
       fontSize: 40,
@@ -220,6 +220,13 @@ export const styles = StyleSheet.create({
       borderColor: "#000000",
       padding: 26,
       alignItems: "center",
+      borderRadius: 10,
+      backgroundColor: "#f8f8f8",
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 3,
     },
     joinButtonText: {
       fontSize: 24,
@@ -274,5 +281,52 @@ export const styles = StyleSheet.create({
       fontWeight: "500",
       color: "#010101",
     },
+    favoritesSection: {
+      padding: 20,      
+    },    
+    favoritesList: {
+      width: '100%',
+      paddingBottom: 10,
+    },
+    favoriteCard: {
+      flexDirection: 'row',
+      backgroundColor: '#fff',
+      borderRadius: 12,
+      padding: 15,
+      marginBottom: 15,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 3,
+      alignItems: 'center',
+    },
+    favoriteImage: {
+      width: 170,
+      height: 170,
+      borderRadius: 8,
+      marginRight: 15,
+    },
+    favoriteDetails: {
+      flex: 1,
+    },
+    favoriteName: {
+      fontSize: 18,
+      fontWeight: '600',
+      marginBottom: 6,
+      fontFamily: "Poppins",
+    },
+    favoritePrice: {
+      fontSize: 16,
+      fontWeight: '700',
+      color: '#010101',
+      fontFamily: "Poppins",
+    },
+    favoriteButton: {
+      padding: 10,
+    },
+    emptySpace: {
+      height: 50,
+    }
   });
   
