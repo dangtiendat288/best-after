@@ -45,7 +45,7 @@ const DonateScreen = () => {
 
         <View style={styles.donateImageContainer}>
           <Image
-            source={require("../../assets//images/donateHeroImage.png")}
+            source={require("../../../assets/images/donateHeroImage.png")}
             style={styles.donateImage}
           />
         </View>
@@ -55,7 +55,7 @@ const DonateScreen = () => {
         <View style={styles.donateCard}>
                     <Image
                       source={
-                        require("../../assets/images/heartDonate.png")
+                        require("../../../assets/images/heartDonate.png")
                       }
                       style={styles.donateBackground}
                     />
