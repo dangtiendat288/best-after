@@ -6,6 +6,9 @@ export default function RootLayout() {
     const handleSearchPress = () => {
         router.push('/search');
       };
+    const handleCartPress = () => {
+        router.push('/cart');
+    };
     return (
     <Tabs
       screenOptions={{
@@ -25,7 +28,9 @@ export default function RootLayout() {
                 <TouchableOpacity onPress={handleSearchPress}>
                   <Ionicons name="search" size={24} color="black" style={styles.icon} />
                 </TouchableOpacity>
-                <Ionicons name="cart" size={24} color="black" style={styles.icon} />
+                <TouchableOpacity onPress={handleCartPress}>
+                    <Ionicons name="cart" size={24} color="black" style={styles.icon} />
+                </TouchableOpacity>
               </View>
               ),        
       }}
