@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import MailingListForm from "@/components/MailingListForm";
 import React from "react";
 import {
   FlatList,
@@ -60,19 +60,12 @@ const renderItem = ({ item }: { item: FavoriteItem }) => (
 
 export default function Favorites() {
   return (
-    <>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Best After</Text>          
-        <View style={styles.iconContainer}>
-          <Ionicons name="search" size={24} color="black" style={styles.icon} />        
-          <Ionicons name="cart" size={24} color="black" style={styles.icon} />
-        </View>
-      </View>    
+    <>        
       <ScrollView style={styles.container}>    
         <View style={styles.heroSection}>
           <Image
             source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/baedf52067b6105cb92258c100c0e049c895837906c9aed955bcefd31ad831e7",
+              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/3db41280b443a5c2ea268a44f5162b8e9f0eca8b1314a61364b8c168b848ad4b",
             }}
             style={styles.heroImage}
           />
@@ -89,16 +82,10 @@ export default function Favorites() {
             scrollEnabled={false} // Disable scroll within FlatList since it's inside a ScrollView
           />
         </View>
-        
         <View style={styles.newsletter}>
-          <Text style={styles.newsletterTitle}>Never miss a deal</Text>
-          <Text style={styles.newsletterSubtitle}>
-            Receive updates about new promotions
-          </Text>
-          <TouchableOpacity style={styles.joinButton}>
-            <Text style={styles.joinButtonText}>Join Mailing List</Text>
-          </TouchableOpacity>
+          <MailingListForm />
         </View>
+
       </ScrollView>
     </>
   );

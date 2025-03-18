@@ -134,11 +134,13 @@ export const styles = StyleSheet.create({
       color: "#010101",
     },
     donateTitle: {
-      fontSize: 40,
+      fontSize: 35,
       fontFamily: "Montserrat",
       fontWeight: "800",
       color: "#fff",
-      marginTop: 110,
+      position: 'absolute',
+      bottom: 10,
+      right: 10
     },
     browseSection: {
       padding: 20,
@@ -181,7 +183,8 @@ export const styles = StyleSheet.create({
       color: "#000000",
     },
     topPicks: {
-      padding: 20,
+      marginTop: 20,
+      paddingHorizontal: 20,
     },
     picksGrid: {
       flexDirection: "row",
@@ -191,7 +194,7 @@ export const styles = StyleSheet.create({
     newsletter: {
       padding: 20,
       alignItems: "center",
-      marginTop: 30,
+      marginTop: 0,
     },
     newsletterTitle: {
       fontSize: 40,
@@ -288,8 +291,6 @@ export const styles = StyleSheet.create({
     },
     card: {
       width: cardWidth,
-      backgroundColor: '#fff',
-      borderRadius: 12,
       padding: 15,
       marginHorizontal: 5,
       shadowColor: '#000',

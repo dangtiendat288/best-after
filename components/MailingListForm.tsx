@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 const MailingListForm = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ const MailingListForm = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Never miss a deal</Text>
       <Text style={styles.subtitle}>Receive updates about new promotions</Text>
-      <Pressable style={styles.button} onPress={handleSubmit}>
+      <Pressable style={styles.joinButton} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Join Mailing List</Text>
       </Pressable>
     </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     lineHeight: 28,
     textAlign: "center",
     color: "#000000",
-    marginTop: 23,
+    margin: 23,
   },
   button: {
     borderWidth: 2,
@@ -57,6 +57,21 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     textAlign: "center",
     color: "#000000",
+  },
+  joinButton: {
+    width: "100%",
+    maxWidth: 269,
+    borderWidth: 1,
+    borderColor: "#000000",
+    padding: 26,
+    alignItems: "center",
+    borderRadius: 10,
+    backgroundColor: "#f8f8f8",
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
   },
 });
 

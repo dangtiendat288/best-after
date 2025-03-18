@@ -45,13 +45,18 @@ export const styles = StyleSheet.create({
       height: 65,
     },
     heroSection: {
-      alignItems: "center",
-      paddingHorizontal: 20,      
+      alignItems: "center",      
+      padding: 20,
+      backgroundColor: "#f8f8f8",
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
     },
     heroImage: {
-      width: 246,
+      width: '100%',
       height: 180,
+      resizeMode: 'contain',
       marginBottom: 15,
+      borderRadius: 10,
     },
     heroTitle: {
       fontSize: 59,
@@ -67,6 +72,7 @@ export const styles = StyleSheet.create({
       fontWeight: "500",
       color: "#000000",
       marginBottom: 10,
+      textAlign: "center",
     },
     actionButtons: {
       alignItems: "center",
@@ -290,8 +296,8 @@ export const styles = StyleSheet.create({
     },
     favoriteCard: {
       flexDirection: 'row',
-      backgroundColor: '#fff',
-      borderRadius: 12,
+      // backgroundColor: '#fff',
+      // borderRadius: 12,
       padding: 15,
       marginBottom: 15,
       shadowColor: '#000',
@@ -302,7 +308,7 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
     },
     favoriteImage: {
-      width: 170,
+      aspectRatio: 1,
       height: 170,
       borderRadius: 8,
       marginRight: 15,

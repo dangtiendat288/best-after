@@ -28,14 +28,7 @@ const DonateScreen = () => {
   ];
 
   return (
-    <>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Best After</Text>
-        <View style={styles.iconContainer}>
-          <Ionicons name="search" size={24} color="black" style={styles.icon} />
-          <Ionicons name="cart" size={24} color="black" style={styles.icon} />
-        </View>
-      </View>
+    <>      
       <ScrollView style={styles.container}>
         <View style={styles.heroSection}>
           <Image
