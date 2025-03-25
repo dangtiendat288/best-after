@@ -63,11 +63,14 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="index"
+        name="profile/index"
         options={{
-          href: null, // This removes the tab from the navigation
+          title: "Profile",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person" size={size} color={color} />
+          ),
         }}
-      />      
+      />           
     </Tabs>
   );
 }
