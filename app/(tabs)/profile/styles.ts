@@ -1,15 +1,12 @@
 import { Dimensions, StyleSheet } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width } = Dimensions.get('window');
 const cardWidth = width * 0.7;
-const insets = useSafeAreaInsets();
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: insets.top
+    backgroundColor: '#fff',    
   },
   header: {
     paddingHorizontal: 20,
