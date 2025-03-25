@@ -1,6 +1,7 @@
 import MailingListForm from "@/components/MailingListForm";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
+  ActivityIndicator,
   FlatList,
   Image,
   ScrollView,
@@ -16,12 +17,25 @@ interface Package {
   price: string;
 }
 
+interface Meal {
+  strMeal: string;
+  strMealThumb: string;
+  idMeal: string;
+}
+
 const renderItem = ({ item }: { item: Package }) => (
-  // <View>
   <View style={styles.card}>
     <Image source={{ uri: item.image }} style={styles.image} />
     <Text style={styles.title}>{item.title}</Text>
     <Text style={styles.price}>{item.price}</Text>
+  </View>
+);
+
+const renderMealItem = ({ item }: { item: Meal }) => (
+  <View style={styles.card}>
+    <Image source={{ uri: item.strMealThumb }} style={styles.image} />
+    <Text style={styles.title}>{item.strMeal}</Text>
+    <Text style={styles.price}>Special Package</Text>
   </View>
 );
 
@@ -44,6 +58,45 @@ const data = [
 ];
 
 export default function HomeScreen() {
+  const [americanMeals, setAmericanMeals] = useState<Meal[]>([]);
+  const [mexicanMeals, setMexicanMeals] = useState<Meal[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchAmericanMeals = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          "https://www.themealdb.com/api/json/v1/1/filter.php?a=American"
+        );
+        const data = await response.json();
+        setAmericanMeals(data.meals || []);
+      } catch (error) {
+        console.error("Error fetching American meals:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const fetchMexicanMeals = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          "https://www.themealdb.com/api/json/v1/1/filter.php?a=Mexican"
+        );
+        const data = await response.json();
+        setMexicanMeals(data.meals || []);
+      } catch (error) {
+        console.error("Error fetching Mexican meals:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAmericanMeals();
+    fetchMexicanMeals();
+  }, []);
+
   return (
     <>      
       <ScrollView style={styles.container}>
@@ -73,30 +126,33 @@ export default function HomeScreen() {
               }}
               style={styles.donateBackground}
             />
-            {/* <Ionicons name="arrow-forward" size={58} color="white" style={{ ...styles.icon, marginStart: 150 }} /> */}
             <Text style={styles.donateTitle}>Favourites</Text>
           </View>
         </View>
 
         <View style={styles.specialPackages}>
           <Text style={styles.sectionTitle}>Special Packages</Text>
-          <FlatList
-            data={data}
-            renderItem={renderItem}
-            keyExtractor={(item, index) => `package-${index}`}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.listContainer}
-            ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
-          />
+          {loading ? (
+            <ActivityIndicator size="large" color="#0000ff" style={{padding: 20}} />
+          ) : (
+            <FlatList
+              data={americanMeals.slice(0, 6)}
+              renderItem={renderMealItem}
+              keyExtractor={(item) => item.idMeal}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.listContainer}
+              ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
+            />
+          )}
         </View>
 
         <View style={styles.topPicks}>
           <Text style={styles.sectionTitle}>Top picks</Text>
           <FlatList
-            data={data}
-            renderItem={renderItem}
-            keyExtractor={(item, index) => `package-${index}`}
+            data={mexicanMeals}
+            renderItem={renderMealItem}
+            keyExtractor={(item) => item.idMeal}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.listContainer}
