@@ -36,7 +36,7 @@ export default function RootLayout() {
       }}
     >
       <Tabs.Screen
-        name="home/index"
+        name="index"
         options={{
           title: "Home",
           tabBarIcon: ({ color, size }) => (
@@ -70,7 +70,16 @@ export default function RootLayout() {
             <Ionicons name="person" size={size} color={color} />
           ),
         }}
-      />           
+      />  
+      <Tabs.Screen
+        name="articles/index"
+        options={{
+          title: "Articles",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="newspaper-outline" size={size} color={color} />
+          ),
+        }}
+      />             
     </Tabs>
   );
 }

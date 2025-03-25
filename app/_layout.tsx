@@ -4,11 +4,11 @@ export default function RootLayout() {
   
   return (
     <Stack
-    screenOptions={{      
-    }}>
+    screenOptions={{}}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="search/index" options={{ headerShown: false }} />
       <Stack.Screen name="cart/index" options={{ headerShown: false }} />
+      <Stack.Screen name="+not-found" />
     </Stack>
   );
 }
