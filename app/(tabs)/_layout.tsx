@@ -61,6 +61,15 @@ export default function RootLayout() {
             <Ionicons name="heart" size={size} color={color} />
           ),
         }}
+      />        
+      <Tabs.Screen
+        name="articles/index"
+        options={{
+          title: "Articles",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="newspaper-outline" size={size} color={color} />
+          ),
+        }}
       />
       <Tabs.Screen
         name="profile/index"
@@ -70,16 +79,7 @@ export default function RootLayout() {
             <Ionicons name="person" size={size} color={color} />
           ),
         }}
-      />  
-      <Tabs.Screen
-        name="articles/index"
-        options={{
-          title: "Articles",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="newspaper-outline" size={size} color={color} />
-          ),
-        }}
-      />             
+      />        
     </Tabs>
   );
 }
