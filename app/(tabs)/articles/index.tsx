@@ -1,4 +1,3 @@
-import { NEWS_API_KEY } from '@env';
 import * as Linking from 'expo-linking';
 import React, { useEffect, useState } from 'react';
 import {
@@ -12,7 +11,7 @@ import {
 import { styles } from './styles';
 
 // News API key
-const NEWS_API_URL = `https://api.thenewsapi.com/v1/news/all?api_token=${NEWS_API_KEY}&language=en`;
+const NEWS_API_URL = `https://api.thenewsapi.com/v1/news/all?api_token=${process.env.EXPO_PUBLIC_NEWS_API_KEY}&language=en`;
 
 // Sample articles data
 const sampleArticles = {
@@ -170,7 +169,8 @@ const sampleArticles = {
   ]
 }
 
-export default function ArticlesScreen() {  
+export default function ArticlesScreen() {
+  console.log(process.env.EXPO_PUBLIC_NEWS_API_KEY)
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [categories, setCategories] = useState<string[]>(['All']);
   const [articles, setArticles] = useState<any[]>([]);

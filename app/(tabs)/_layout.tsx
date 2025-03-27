@@ -45,7 +45,7 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="donate"
+        name="donate/index"
         options={{
           title: "Donate",
           tabBarIcon: ({ color, size }) => (
@@ -54,7 +54,7 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="favorites"
+        name="favorites/index"
         options={{
           title: "Favorites",
           tabBarIcon: ({ color, size }) => (
@@ -63,7 +63,7 @@ export default function RootLayout() {
         }}
       />        
       <Tabs.Screen
-        name="articles"
+        name="articles/index"
         options={{
           title: "Articles",
           tabBarIcon: ({ color, size }) => (
@@ -72,7 +72,7 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="profile/index"
         options={{
           title: "Profile",
           tabBarIcon: ({ color, size }) => (
