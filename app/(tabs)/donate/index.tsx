@@ -3,7 +3,7 @@ import MailingListForm from "@/components/MailingListForm";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
-import { styles } from "./styles";
+import { styles } from "../../../styles/donate/styles";
 
 const DonateScreen = () => {
   const donationOrgs = [

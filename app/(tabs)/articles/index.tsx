@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { styles } from './styles';
+import { styles } from '../../../styles/articles/styles';
 
 // News API key
 const NEWS_API_URL = `https://api.thenewsapi.com/v1/news/all?api_token=${process.env.EXPO_PUBLIC_NEWS_API_KEY}&language=en`;

@@ -9,7 +9,7 @@ import {
   View
 } from "react-native";
 
-import { styles } from "./styles";
+import { styles } from "../../../styles/favorites/styles";
 
 // Define interface for favorite food items
 interface FavoriteItem {

@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { styles } from './styles';
+import { styles } from '../../../styles/profile/styles';
 // Sample user data
 const userData = {
   name: 'Jessica Thompson',
